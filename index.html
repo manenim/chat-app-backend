@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket Io</title>
+</head>
+<body>
+    
+    <script src = "/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io()
+        socket.on('connect', () => {
+            socket.emit('message', 'heyy server')
+            socket.on('message',  msg => console.log(msg))
+            socket.emit('greet', 'good morning')
+        })
+    </script>
+</body>
+</html>
